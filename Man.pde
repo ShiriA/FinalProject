@@ -1,12 +1,17 @@
-public class Man{
 int countBody;
 public Man(){
 
 }
   public void manDisplay(){
-    ellipse(175,150,20,20);
-    line(155,130,175,150);
-
+     fill(255);
+    ellipse(190,150,30,30);
+    line(190,135,190,100);
+    line(190,100,280,100);
+    line(280, 100, 280, 300);
+    fill(128);
+    rect(160,300,160,20);
+    
+//text(
  countBody = 0;
  // while(key==1){
    //if(countBody>0)
@@ -22,4 +27,3 @@ public Man(){
     
     
   }
-  
