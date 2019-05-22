@@ -1,51 +1,34 @@
+
 Words words;
 Man man;
-char pickedLetter;
+PickedLetter pick;
+char pickedLetter = ' ';
+boolean check;
+
 
 
 void setup() {
   size(400, 400);
   man = new Man();
   words = new Words();
+  pick = new PickedLetter();
   beginningScreen();
 }
 void draw() {
   background(240);
   man.manDisplay();
- 
 }
-
 void keyPressed() {
-  
-  if (keyCode == ENTER) {
+  if (key == '1') {
     playGame();
-
-
-    switch(key) {
-    case 'a': 
-      pickedLetter = 'a';
-    case 'b': 
-      pickedLetter = 'b';
-    case 'c': 
-      pickedLetter = 'c';
-    case 'd': 
-      pickedLetter = 'd';
-    case 'e': 
-      pickedLetter = 'e';
-    case 'f': 
-      pickedLetter = 'f';
-    case 'g': 
-      pickedLetter = 'g';
-    case 'h': 
-      pickedLetter = 'h';
-      
-    }
   }
 }
-void beginningScreen(){
-  System.out.println("Want to Play? Press Enter."); 
+
+void beginningScreen() {
+  check = false;
+  System.out.println("Want to Play? Press 1.");
 }
-  
+
 void playGame() {
 
   String pickedWord = words.wordsList[(int)(Math.random()*(words.wordsList.length))];  
@@ -55,23 +38,28 @@ void playGame() {
     Blank.add("_ ");
   }
 
-  System.out.println("Welcome to Hangman - You must find the word before you pick 7 wrong letters! Just press a letter to play.");
-  while (man.countBody<7) {
-    System.out.println(pickedLetter);
-    if (pickedWord.indexOf(pickedLetter) !=-1) {
-      found = pickedWord.indexOf(pickedLetter);
-      System.out.print(pickedLetter + "is in" + pickedWord + "at position" + found+1 +".");
-      Blank.set(found, pickedLetter + " ");
+  System.out.print("Welcome to Hangman - You must find the word before you pick 7 wrong letters! Just press a letter to play.");
 
-      for (int i =0; i<Blank.size(); i++) {
-        if (Blank.get(i)!= "_ ") {
-          System.out.println("You win! The word was " + pickedWord +".");
-        } else
-          System.out.print(pickedLetter +" is not in " + pickedWord +".");
-        man.countBody++;
-      }
+
+  while (man.countBody<7) {
+
+  pick.pickedLetterMethod();
+  System.out.println(pickedLetter);
+  if (pickedWord.indexOf(pickedLetter) !=-1) {
+    found = pickedWord.indexOf(pickedLetter);
+    System.out.print(pickedLetter + "is in" + pickedWord + "at position" + found+1 +".");
+    Blank.set(found, pickedLetter + " ");
+    pickedLetter = ' ';
+
+    for (int i =0; i<Blank.size(); i++) {
+      if (Blank.get(i)!= "_ ") {
+        System.out.println("You win! The word was " + pickedWord +".");
+      } else
+        System.out.print(pickedLetter +" is not in " + pickedWord +".");
+      man.countBody++;
+      pickedLetter = ' ';
     }
-    
   }
-  System.out.println("You lose!...And so does he :(. The word was " + pickedWord + ".");
+}
+System.out.println("You lose!...And so does he :(. The word was " + pickedWord + ".");
 }
