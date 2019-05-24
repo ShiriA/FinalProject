@@ -21,12 +21,16 @@ void draw() {
 void keyPressed() {
   if (key == '1') {
     playGame();
+  
   }
 }
+
+
 
 void beginningScreen() {
   check = false;
   System.out.println("Want to Play? Press 1.");
+
 }
 
 void playGame() {
@@ -42,13 +46,12 @@ void playGame() {
 
 
   while (man.countBody<=5) {
-    if(key == '1'){
-      pick.pickedLetterMethod();
-  }
+    
+  
     
     if (pickedWord.indexOf(pickedLetter) !=-1) {
       found = pickedWord.indexOf(pickedLetter);
-      System.out.print(pickedLetter + "is in" + pickedWord + "at position" + found+1 +".");
+      System.out.print(pickedLetter + " is in " + pickedWord + " at position " + found+1 +".");
       Blank.set(found, pickedLetter + " ");
       pickedLetter = ' ';
 
