@@ -1,8 +1,8 @@
 public class PickedLetter {
 
   void pickedLetterMethod() {
+    System.out.print("gg");
       switch(key){
-    
       case 'a': 
         pickedLetter = 'a';
         break;
