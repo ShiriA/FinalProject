@@ -1,5 +1,5 @@
 public class Man {
-  int countBody =0;
+  int countBody=0;
   public Man() {
   }
   public void manDisplay() {

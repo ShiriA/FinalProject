@@ -5,6 +5,7 @@ Man man;
 char pickedLetter = ' ';
 char clicked;
 char start;
+int index;
 
 void setup() {
   size(400, 400);
@@ -40,10 +41,16 @@ void playGame() {
   
   while(pickedLetter != ' '){
   if (man.countBody<=5) {
-      if (pickedWord.indexOf(pickedLetter) !=-1) {
-        found = pickedWord.indexOf(pickedLetter)+1;
-        System.out.println(pickedLetter + " is in the word at position " + found +".");
-        Blank.set(found-1, pickedLetter + " ");
+    if(pickedWord.indexOf(pickedLetter) !=-1){
+     for (index = pickedWord.indexOf(pickedLetter); index >= 0; index++){
+       if(pickedWord.indexOf(pickedLetter) !=-1){
+   
+
+        index++;
+        System.out.println(pickedLetter + " is in the word at position " + index +".");
+        System.out.println();
+        index--;
+        Blank.set(index, pickedLetter + " ");
         pickedLetter = ' ';
         System.out.println(Blank);
 
@@ -58,7 +65,10 @@ void playGame() {
           
             
        
-      } else {
+      } 
+    }
+    }
+      else {
         System.out.println(pickedLetter +" is not in the word.");
         man.countBody++;
         draw();
@@ -66,12 +76,23 @@ void playGame() {
         System.out.println();
         
         pickedLetter = ' ';
+        if(man.countBody ==6){
+          System.out.println("You lose!...And so does he :(. The word was " + pickedWord + ".");
+          System.out.println();
+          System.out.println("tap to replay.");
+        }
       }
-    
+  
   }  
-  else
-    System.out.println("You lose!...And so does he :(. The word was " + pickedWord + ".");
-    return;
+  else{
+    words.wordCall();
+    playGame();
+    man.countBody =0;
+    draw();
+
+    
   }
+  }
+  
   
 }
