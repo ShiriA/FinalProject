@@ -1,5 +1,5 @@
 public class Man {
-  int countBody;
+  int countBody =0;
   public Man() {
   }
   public void manDisplay() {
@@ -9,7 +9,6 @@ public class Man {
     fill(128);
     rect(160, 300, 160, 20);
 
-    countBody = 0;
     if (countBody>0) {
       fill(255);
       ellipse(190, 150, 30, 30);
