@@ -1,4 +1,3 @@
-
 Words words;
 Man man;
 
@@ -11,7 +10,7 @@ void setup() {
   size(400, 400);
   man = new Man();
   words = new Words();
-
+  words.wordCall();
  
  System.out.println("Welcome to Hangman - You must find the word before you pick 6 wrong letters! Just press a letter to start playing.");
  System.out.println();
@@ -19,7 +18,7 @@ void setup() {
 void draw() {
   background(240);
   man.manDisplay();
-  //text.
+  //text. (used letters and remaining?) Add
 }
 void keyPressed() {
 
@@ -40,17 +39,16 @@ void keyReleased(){
 void playGame() {
   
   while(pickedLetter != ' '){
-  if (man.countBody<=5) {
-    if(pickedWord.indexOf(pickedLetter) !=-1){
-     for (index = pickedWord.indexOf(pickedLetter); index >= 0; index++){
-       if(pickedWord.indexOf(pickedLetter) !=-1){
    
+    if(pickedWord.indexOf(pickedLetter) !=-1){
+     for (index = pickedWord.indexOf(pickedLetter); index <pickedWord.length(); index++){
+      if(pickedWord.indexOf(pickedLetter) !=-1){
 
         index++;
         System.out.println(pickedLetter + " is in the word at position " + index +".");
         System.out.println();
         index--;
-        Blank.set(index, pickedLetter + " ");
+        Blank.set(index, pickedLetter+"");
         pickedLetter = ' ';
         System.out.println(Blank);
 
@@ -58,15 +56,15 @@ void playGame() {
         if (!Blank.contains("_ ")){
             System.out.println("You win! The word was " + pickedWord +".");
         }
-          else{
-            playGame();
-          }
+         // else{
+        //    playGame();
+         // }
           
           
-            
+      }
        
       } 
-    }
+    
     }
       else {
         System.out.println(pickedLetter +" is not in the word.");
@@ -79,20 +77,17 @@ void playGame() {
         if(man.countBody ==6){
           System.out.println("You lose!...And so does he :(. The word was " + pickedWord + ".");
           System.out.println();
-          System.out.println("tap to replay.");
+         
         }
+     
       }
   
-  }  
-  else{
-    words.wordCall();
-    playGame();
-    man.countBody =0;
-    draw();
+   
+  
 
     
   }
-  }
+  
   
   
 }
