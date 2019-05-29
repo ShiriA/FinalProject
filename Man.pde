@@ -12,6 +12,10 @@ public class Man {
     if (countBody>0) {
       fill(255);
       ellipse(190, 150, 30, 30);
+      //if(countBody > 1)
+      // arc(150,50,5,25,5,90);
+       //  line
+       //
       if (countBody >1) {
         line(190, 165, 190, 215);
         if (countBody >2) {

@@ -2,8 +2,6 @@ Words words;
 Man man;
 
 char pickedLetter = ' ';
-char clicked;
-char start;
 int index;
 
 void setup() {
@@ -42,15 +40,18 @@ void playGame() {
    
     if(pickedWord.indexOf(pickedLetter) !=-1){
      for (index = pickedWord.indexOf(pickedLetter); index <pickedWord.length(); index++){
-      if(pickedWord.indexOf(pickedLetter) !=-1){
+      if(pickedWord.charAt(index)==pickedLetter){
 
+        
+        
         index++;
         System.out.println(pickedLetter + " is in the word at position " + index +".");
         System.out.println();
         index--;
         Blank.set(index, pickedLetter+"");
-        pickedLetter = ' ';
+        
         System.out.println(Blank);
+        System.out.println();
 
   
         if (!Blank.contains("_ ")){
@@ -62,9 +63,9 @@ void playGame() {
           
           
       }
-       
+      
       } 
-    
+    pickedLetter = ' ';
     }
       else {
         System.out.println(pickedLetter +" is not in the word.");
