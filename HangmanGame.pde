@@ -3,6 +3,7 @@ Man man;
 
 char pickedLetter = ' ';
 int index;
+int count=0;
 
 void setup() {
   size(400, 400);
@@ -16,6 +17,16 @@ void setup() {
 void draw() {
   background(240);
   man.manDisplay();
+  textSize(20);
+  fill(0,102,153);
+  text("Incorrect Letters:", 10, 30);
+  
+   // count++;
+   // textSize(20);
+   // fill(0,102,153);
+   // text(pickedLetter, 60+(count*10), 30);
+   
+   
   //text. (used letters and remaining?) Add
 }
 void keyPressed() {
@@ -35,10 +46,9 @@ void keyReleased(){
 
 
 void playGame() {
-  
   while(pickedLetter != ' '){
-   
     if(pickedWord.indexOf(pickedLetter) !=-1){
+     //count++;
      for (index = pickedWord.indexOf(pickedLetter); index <pickedWord.length(); index++){
       if(pickedWord.charAt(index)==pickedLetter){
 
@@ -68,6 +78,11 @@ void playGame() {
     pickedLetter = ' ';
     }
       else {
+        //count++;
+    //textSize(20);
+    //fill(0,102,153);
+   // text(pickedLetter, 60+(count*10), 30);
+    
         System.out.println(pickedLetter +" is not in the word.");
         man.countBody++;
         draw();
@@ -75,7 +90,7 @@ void playGame() {
         System.out.println();
         
         pickedLetter = ' ';
-        if(man.countBody ==6){
+        if(man.countBody ==7){
           System.out.println("You lose!...And so does he :(. The word was " + pickedWord + ".");
           System.out.println();
          

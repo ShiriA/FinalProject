@@ -8,28 +8,30 @@ public class Man {
     line(280, 100, 280, 300);
     fill(128);
     rect(160, 300, 160, 20);
-
     if (countBody>0) {
       fill(255);
       ellipse(190, 150, 30, 30);
-      //if(countBody > 1)
-      // arc(150,50,5,25,5,90);
-       //  line
+      if(countBody > 1){
+        fill(256);
+        arc(192,160,25,5,60,62);
+        line(185,140,185,150);
+        line(195,140,195,150);
        //
-      if (countBody >1) {
-        line(190, 165, 190, 215);
         if (countBody >2) {
+        line(190, 165, 190, 215);
+        if (countBody >3) {
           line(190, 180, 215, 170);
-          if (countBody >3) {
+          if (countBody >4) {
             line(190, 180, 165, 170);
-            if (countBody >4) {
+            if (countBody >5) {
               line(190, 215, 215, 245);
-              if (countBody >5) {
+              if (countBody >6) {
                 line(190, 215, 165, 245);
               }
             }
           }
         }
+      }
       }
     }
   }
