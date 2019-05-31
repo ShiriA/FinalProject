@@ -12,6 +12,7 @@ void setup() {
   words.wordCall();
  
  System.out.println("Welcome to Hangman - You must find the word before you pick 6 wrong letters! Just press a letter to start playing.");
+ System.out.println(Blank);
  System.out.println();
 }
 void draw() {
@@ -20,14 +21,19 @@ void draw() {
   textSize(20);
   fill(0,102,153);
   text("Incorrect Letters:", 10, 30);
-  
-     textSize(20);
-     fill(0,102,153);
-    text(pickedLetter, 60+(count*25), 30);
-       
-      
-  
+  noLoop();
+  if(count>0){
+   System.out.println("lol");
+    //for(int i = 0; i<count; i++){
+    // textSize(20);
+    // fill(0,102,153);
+    // text(pickedLetter, 60+(i*25), 30);
+ //   }
+ // }
+}    
 }
+  
+
 void keyPressed() {
 
   if (Character.isLetter(key)) {
@@ -47,7 +53,7 @@ void keyReleased(){
 void playGame() {
   while(pickedLetter != ' '){
     if(pickedWord.indexOf(pickedLetter) !=-1){
-     count++;
+    count++;
      
      for (index = pickedWord.indexOf(pickedLetter); index <pickedWord.length(); index++){
       if(pickedWord.charAt(index)==pickedLetter){
@@ -74,8 +80,8 @@ void playGame() {
     pickedLetter = ' ';
     }
       else {
-        count++;
-        for(int i=0;i<count;i++)
+     count++;
+     
     
         System.out.println(pickedLetter +" is not in the word.");
         man.countBody++;
