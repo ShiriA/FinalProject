@@ -16,7 +16,7 @@ public class Man {
         arc(192,160,25,5,60,62);
         line(185,140,185,150);
         line(195,140,195,150);
-       //
+       
         if (countBody >2) {
         line(190, 165, 190, 215);
         if (countBody >3) {

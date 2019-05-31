@@ -21,13 +21,12 @@ void draw() {
   fill(0,102,153);
   text("Incorrect Letters:", 10, 30);
   
-   // count++;
-   // textSize(20);
-   // fill(0,102,153);
-   // text(pickedLetter, 60+(count*10), 30);
-   
-   
-  //text. (used letters and remaining?) Add
+     textSize(20);
+     fill(0,102,153);
+    text(pickedLetter, 60+(count*25), 30);
+       
+      
+  
 }
 void keyPressed() {
 
@@ -48,12 +47,13 @@ void keyReleased(){
 void playGame() {
   while(pickedLetter != ' '){
     if(pickedWord.indexOf(pickedLetter) !=-1){
-     //count++;
+     count++;
+     
      for (index = pickedWord.indexOf(pickedLetter); index <pickedWord.length(); index++){
       if(pickedWord.charAt(index)==pickedLetter){
 
         
-        
+        redraw();
         index++;
         System.out.println(pickedLetter + " is in the word at position " + index +".");
         System.out.println();
@@ -67,25 +67,19 @@ void playGame() {
         if (!Blank.contains("_ ")){
             System.out.println("You win! The word was " + pickedWord +".");
         }
-         // else{
-        //    playGame();
-         // }
-          
-          
+  
       }
       
       } 
     pickedLetter = ' ';
     }
       else {
-        //count++;
-    //textSize(20);
-    //fill(0,102,153);
-   // text(pickedLetter, 60+(count*10), 30);
+        count++;
+        for(int i=0;i<count;i++)
     
         System.out.println(pickedLetter +" is not in the word.");
         man.countBody++;
-        draw();
+        redraw();
         System.out.println(Blank);
         System.out.println();
         
