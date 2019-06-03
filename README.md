@@ -16,7 +16,6 @@ I had a lot of trouble working with the key system variable and keyPressed(). I 
     Blank.add("_ ");
   }
   
-```
 This is the code that picks a random word from an array of many words that I added. It adds underscores to a Blank arraylist which is printed so that the player knows the length of the word but not the letters.
 
 * [Processing](https://processing.org/) - The IDE used
