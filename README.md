@@ -2,7 +2,7 @@
 
 Hangman Game - The purpose of this project is a one-player game of hangman where a word is randomly selected from a large batch.
 
-This versin of Hangman is a game where the player has 7 attempts to guess a random word. The program tells the player if the typed letter is in the word. If not, the man that is to be hanged starts appearing on the screen.
+This version of Hangman is a game where the player has 7 attempts to guess a random word. The program tells the player if the typed letter is in the word. If not, the man that is to be hanged starts appearing on the screen.
 
 ### Difficulties or opportunities you encountered along the way.
 
