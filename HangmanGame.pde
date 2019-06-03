@@ -24,12 +24,7 @@ void draw() {
   noLoop();
   if(count>0){
    System.out.println("lol");
-    //for(int i = 0; i<count; i++){
-    // textSize(20);
-    // fill(0,102,153);
-    // text(pickedLetter, 60+(i*25), 30);
- //   }
- // }
+    
 }    
 }
   
