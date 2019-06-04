@@ -20,7 +20,7 @@ void draw() {
   man.manDisplay();
   textSize(13);
   fill(0, 102, 153);
-  text("Remember what letters you have used!", 10, 20);
+ text("Remember what letters you have used!", 10, 20);
 }
 
 
@@ -40,7 +40,6 @@ void playGame() {
 
       for (index = pickedWord.indexOf(pickedLetter); index <pickedWord.length(); index++) {
         if (pickedWord.charAt(index)==pickedLetter) {
-
 
           redraw();
           index++;
@@ -63,7 +62,7 @@ void playGame() {
 
 
 
-      System.out.println(pickedLetter +" is not in the word.");
+      System.out.println(pickedLetter + " is not in the word.");
       man.countBody++;
       redraw();
       System.out.println(Blank);
